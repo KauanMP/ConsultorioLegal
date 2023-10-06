@@ -1,0 +1,12 @@
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\bin\Debug\net6.0\CL.Manager.deps.json
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\bin\Debug\net6.0\CL.Manager.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\bin\Debug\net6.0\CL.Manager.pdb
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\CL.Manager.csproj.AssemblyReference.cache
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\CL.Manager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\CL.Manager.AssemblyInfoInputs.cache
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\CL.Manager.AssemblyInfo.cs
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\CL.Manager.csproj.CoreCompileInputs.cache
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\CL.Manager.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\refint\CL.Manager.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\CL.Manager.pdb
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.Manager\obj\Debug\net6.0\ref\CL.Manager.dll
