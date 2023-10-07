@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "CL.WebApi/1.0.0": {
         "dependencies": {
-          "CL.Data": "1.0.0",
+          "CL.Manager": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.14",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2",
@@ -222,13 +222,12 @@
           "CL.Core.dll": {}
         }
       },
-      "CL.Data/1.0.0": {
+      "CL.Manager/1.0.0": {
         "dependencies": {
-          "CL.Core": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.14"
+          "CL.Core": "1.0.0"
         },
         "runtime": {
-          "CL.Data.dll": {}
+          "CL.Manager.dll": {}
         }
       }
     }
@@ -426,7 +425,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CL.Data/1.0.0": {
+    "CL.Manager/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

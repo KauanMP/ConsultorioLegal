@@ -24,8 +24,6 @@ C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Swa
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\CL.Core.dll
-C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\CL.Data.dll
-C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\CL.Data.pdb
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\CL.Core.pdb
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\obj\Debug\net6.0\staticwebassets.development.json
@@ -38,3 +36,5 @@ C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\obj\Debug\net6.0\CL.
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\obj\Debug\net6.0\ref\CL.WebApi.dll
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Humanizer.dll
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\CL.Manager.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\CL.Manager.pdb

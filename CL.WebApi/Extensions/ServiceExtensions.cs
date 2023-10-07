@@ -1,3 +1,4 @@
+using CL.Manager.Implementation;
 using CL.Manager.Interfaces;
 using CL.WebApi.Context;
 using CL.WebApi.Repository;
@@ -19,6 +20,7 @@ namespace CL.WebApi.Extensions
         public static void ConfigureRepositoryWrapper(this IServiceCollection services)
         {
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IClienteManager, ClienteManager>();
         }
     }
 }

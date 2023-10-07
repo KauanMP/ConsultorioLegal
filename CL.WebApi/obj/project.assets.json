@@ -444,18 +444,17 @@
           "bin/placeholder/CL.Core.dll": {}
         }
       },
-      "CL.Data/1.0.0": {
+      "CL.Manager/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "CL.Core": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.14"
+          "CL.Core": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/CL.Data.dll": {}
+          "bin/placeholder/CL.Manager.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CL.Data.dll": {}
+          "bin/placeholder/CL.Manager.dll": {}
         }
       }
     }
@@ -1234,15 +1233,15 @@
       "path": "../CL.Core/CL.Core.csproj",
       "msbuildProject": "../CL.Core/CL.Core.csproj"
     },
-    "CL.Data/1.0.0": {
+    "CL.Manager/1.0.0": {
       "type": "project",
-      "path": "../CL.Data/CL.Data.csproj",
-      "msbuildProject": "../CL.Data/CL.Data.csproj"
+      "path": "../CL.Manager/CL.Manager.csproj",
+      "msbuildProject": "../CL.Manager/CL.Manager.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "CL.Data >= 1.0.0",
+      "CL.Manager >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.14",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.2",
@@ -1274,8 +1273,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kauan\\Área de Trabalho\\ConsultorioLegal\\CL.Data\\CL.Data.csproj": {
-              "projectPath": "C:\\Users\\kauan\\Área de Trabalho\\ConsultorioLegal\\CL.Data\\CL.Data.csproj"
+            "C:\\Users\\kauan\\Área de Trabalho\\ConsultorioLegal\\CL.Manager\\CL.Manager.csproj": {
+              "projectPath": "C:\\Users\\kauan\\Área de Trabalho\\ConsultorioLegal\\CL.Manager\\CL.Manager.csproj"
             }
           }
         }
