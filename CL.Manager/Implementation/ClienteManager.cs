@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CL.Core.Domains;
 using CL.Manager.Interfaces;
 
 namespace CL.Manager.Implementation
@@ -13,6 +14,16 @@ namespace CL.Manager.Implementation
         public ClienteManager(IClienteRepository clienteRepository)
         {
             this.clienteRepository = clienteRepository;
+        }
+
+        public async Task<IEnumerable<Cliente>> GetClientesAsync()
+        {
+            return await clienteRepository.GetClientesAsync();
+        }
+
+        public async Task<Cliente> GetClienteAsync(int id)
+        {
+            return await clienteRepository.GetClienteAsync(id);
         }
     }
 }

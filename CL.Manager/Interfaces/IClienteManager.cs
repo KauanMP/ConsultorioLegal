@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CL.Core.Domains;
 
 namespace CL.Manager.Interfaces
 {
-    public class IClienteManager
+    public interface IClienteManager
     {
-        
+
+        Task<IEnumerable<Cliente>> GetClientesAsync();
+        Task<Cliente> GetClienteAsync(int id);
     }
 }
