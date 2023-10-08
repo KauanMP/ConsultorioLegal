@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "wC4ylQMdEMtm2k5t4iPclalJyykhqlxMH9ZMIWiBlQ6JXtxoNPC9vF0VgHzQxMpC/bwR/8oMO69kQ76z4p2RMg==",
+  "dgSpecHash": "OZGt9D/lG++ZHTgavE2siZMR8x9CS7gahFaifQhCThUBnW/7amupdj6GfBRBMVgfVGbugSiJ180e4KBRaAAskw==",
   "success": true,
   "projectFilePath": "C:\\Users\\kauan\\Área de Trabalho\\ConsultorioLegal\\CL.Manager\\CL.Manager.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kauan\\.nuget\\packages\\fluentvalidation\\10.0.3\\fluentvalidation.10.0.3.nupkg.sha512",
+    "C:\\Users\\kauan\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.0.3\\fluentvalidation.aspnetcore.10.0.3.nupkg.sha512",
+    "C:\\Users\\kauan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.0.3\\fluentvalidation.dependencyinjectionextensions.10.0.3.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.14\\microsoft.entityframeworkcore.6.0.14.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.14\\microsoft.entityframeworkcore.abstractions.6.0.14.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.14\\microsoft.entityframeworkcore.analyzers.6.0.14.nupkg.sha512",

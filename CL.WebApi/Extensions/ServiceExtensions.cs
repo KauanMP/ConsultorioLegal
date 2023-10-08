@@ -1,7 +1,10 @@
+using CL.Core.Domains;
 using CL.Manager.Implementation;
 using CL.Manager.Interfaces;
+using CL.Manager.Validator;
 using CL.WebApi.Context;
 using CL.WebApi.Repository;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 namespace CL.WebApi.Extensions

@@ -9,6 +9,7 @@
       "CL.WebApi/1.0.0": {
         "dependencies": {
           "CL.Manager": "1.0.0",
+          "FluentValidation.AspNetCore": "10.0.3",
           "Microsoft.EntityFrameworkCore": "6.0.14",
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2",
@@ -16,6 +17,38 @@
         },
         "runtime": {
           "CL.WebApi.dll": {}
+        }
+      },
+      "FluentValidation/10.0.3": {
+        "runtime": {
+          "lib/net5.0/FluentValidation.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "10.0.3.0"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/10.0.3": {
+        "dependencies": {
+          "FluentValidation": "10.0.3",
+          "FluentValidation.DependencyInjectionExtensions": "10.0.3"
+        },
+        "runtime": {
+          "lib/net5.0/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "10.0.3.0"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/10.0.3": {
+        "dependencies": {
+          "FluentValidation": "10.0.3",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "10.0.3.0"
+          }
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -224,7 +257,8 @@
       },
       "CL.Manager/1.0.0": {
         "dependencies": {
-          "CL.Core": "1.0.0"
+          "CL.Core": "1.0.0",
+          "FluentValidation.AspNetCore": "10.0.3"
         },
         "runtime": {
           "CL.Manager.dll": {}
@@ -237,6 +271,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentValidation/10.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FfMIVWEgyio5l/IMVSYm3olf5GR96g6q7PuDYgbvw8BsGFQuN3SRTTI5QUYtI0E86tdzNrM9w8u2o+QLtRaI0A==",
+      "path": "fluentvalidation/10.0.3",
+      "hashPath": "fluentvalidation.10.0.3.nupkg.sha512"
+    },
+    "FluentValidation.AspNetCore/10.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-44++2CeN1GD4zjaZU4A/OVS5RHwD3vWm1fSozntFt0kj/XstZl1zq+Co2iYvMqyMA+RrmnK6Qf7o7XfmWmgKTA==",
+      "path": "fluentvalidation.aspnetcore/10.0.3",
+      "hashPath": "fluentvalidation.aspnetcore.10.0.3.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/10.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nPXKbn7tAoNy5oWAyyquCCpCvlGpBVvo1Y8UgwrGPiSthRtoeX/c4uMgfhgof1DVLvi4UFY1m7o2bcmIHCRmnw==",
+      "path": "fluentvalidation.dependencyinjectionextensions/10.0.3",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.10.0.3.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

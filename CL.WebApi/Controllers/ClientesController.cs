@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using CL.Core.Domains;
 using Microsoft.AspNetCore.Mvc;
 using CL.Manager.Interfaces;
 using CL.Manager.Implementation;
+using CL.Manager.Validator;
 
 namespace CL.WebApi.Controllers
 {
@@ -34,6 +36,7 @@ namespace CL.WebApi.Controllers
         }
 
         [HttpPost]
+
         public async Task<IActionResult> Post(Cliente cliente)
         {
             var clienteInserido = await clienteManager.InsertClienteAsync(cliente);
