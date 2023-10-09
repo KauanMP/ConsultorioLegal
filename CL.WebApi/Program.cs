@@ -5,6 +5,7 @@ using CL.Manager.Validator;
 using CL.WebApi.Extensions;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ builder.Services.ConfigureRepositoryWrapper();
 
 builder.Services.UseAutoMapperConfiguration();
 
-builder.Services.AddControllers().AddFluentValidation();
+builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore).AddFluentValidation();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

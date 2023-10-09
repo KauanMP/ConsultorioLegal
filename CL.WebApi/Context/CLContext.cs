@@ -1,4 +1,5 @@
 
+using System.Collections.Immutable;
 using CL.Core.Domains;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ namespace CL.WebApi.Context
         }
 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,3 +20,4 @@ namespace CL.WebApi.Context
         }
     }
 }
+

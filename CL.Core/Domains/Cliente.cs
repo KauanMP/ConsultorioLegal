@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CL.Core.Domains
@@ -15,7 +16,7 @@ namespace CL.Core.Domains
 
         [MaxLength(200)]
         [Required]
-        
+
         public string Nome { get; set; }
 
         public DateTime DataNascimento { get; set; }
@@ -29,5 +30,7 @@ namespace CL.Core.Domains
         public string Documento { get; set; }
         public DateTime Criacao { get; set; }
         public DateTime? UltimaAtualizacao { get; set; }
+
+        public Endereco Endereco { get; set; }
     }
 }
