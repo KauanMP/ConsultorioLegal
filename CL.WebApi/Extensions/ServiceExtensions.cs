@@ -23,6 +23,14 @@ namespace CL.WebApi.Extensions
 
         }
 
+        public static void UseDataBaseConfiguration(this IApplicationBuilder app)
+        {
+            using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
+            using var context = serviceScope.ServiceProvider.GetService<CLContext>();
+            context.Database.Migrate();
+            context.Database.EnsureCreated(); // Garante que a migração vai ser criada, caso não seja exibe um erro do porquê
+        }
+
         public static void ConfigureRepositoryWrapper(this IServiceCollection services)
         {
             services.AddScoped<IClienteRepository, ClienteRepository>();
