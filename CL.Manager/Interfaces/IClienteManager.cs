@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CL.Core.Domains;
+using CL.CoreShared.ModelViews;
 
 namespace CL.Manager.Interfaces
 {
@@ -11,8 +12,8 @@ namespace CL.Manager.Interfaces
 
         Task<IEnumerable<Cliente>> GetClientesAsync();
         Task<Cliente> GetClienteAsync(int id);
-        Task<Cliente> InsertClienteAsync(Cliente cliente);
-        Task<Cliente> UpdateClienteAsync(Cliente cliente);
+        Task<Cliente> InsertClienteAsync(NovoCliente novoCliente);
+        Task<Cliente> UpdateClienteAsync(AlteraCliente alteraCliente);
         Task DeleteClienteAsync(int id);
     }
 }

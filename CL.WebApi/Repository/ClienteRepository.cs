@@ -1,4 +1,5 @@
 using CL.Core.Domains;
+using CL.CoreShared.ModelViews;
 using CL.Manager.Interfaces;
 using CL.WebApi.Context;
 using Microsoft.EntityFrameworkCore;

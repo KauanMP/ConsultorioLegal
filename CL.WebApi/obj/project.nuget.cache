@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "fDwDiUyOEDbCECFYdoxjU3oLI/gkzJuh8KyffgQZ2QhG6ECqjt8ouna2jMB+1mE9CsY/VSZIXazA7HH23qqcVA==",
+  "dgSpecHash": "D53GcpI83H6effpFkwBIf+4nqY73Pkc+iFzr3kZZnkYvp491EAVeiKficDFUL6Cmb/u9f7wqbO/d1k94l5ZBDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\kauan\\Área de Trabalho\\ConsultorioLegal\\CL.WebApi\\CL.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kauan\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
+    "C:\\Users\\kauan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\fluentvalidation\\10.0.3\\fluentvalidation.10.0.3.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.0.3\\fluentvalidation.aspnetcore.10.0.3.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.0.3\\fluentvalidation.dependencyinjectionextensions.10.0.3.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\kauan\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.14\\microsoft.entityframeworkcore.6.0.14.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.14\\microsoft.entityframeworkcore.abstractions.6.0.14.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.14\\microsoft.entityframeworkcore.analyzers.6.0.14.nupkg.sha512",
@@ -32,6 +35,7 @@
     "C:\\Users\\kauan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\kauan\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\kauan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

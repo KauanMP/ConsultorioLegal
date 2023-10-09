@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using CL.Core.Domains;
+using CL.CoreShared.ModelViews;
 using FluentValidation;
 
 namespace CL.Manager.Validator
 {
-    public class ClienteValidator : AbstractValidator<Cliente>
+    public class NovoClienteValidator : AbstractValidator<NovoCliente>
     {
-        public ClienteValidator()
+        public NovoClienteValidator()
         {
             RuleFor(x => x.Nome).NotEmpty().WithMessage("O nome é obrigatório.").MinimumLength(3).WithMessage("O nome deve ter no mínimo 3 caracteres");
             RuleFor(x => x.DataNascimento).NotEmpty().WithMessage("A data de nascimento é obrigatório.").LessThan(DateTime.Now).GreaterThan(DateTime.Now.AddYears(-130));

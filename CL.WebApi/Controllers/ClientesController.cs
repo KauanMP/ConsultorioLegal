@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using CL.Manager.Interfaces;
 using CL.Manager.Implementation;
 using CL.Manager.Validator;
+using CL.CoreShared.ModelViews;
 
 namespace CL.WebApi.Controllers
 {
@@ -37,16 +38,16 @@ namespace CL.WebApi.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Post(Cliente cliente)
+        public async Task<IActionResult> Post(NovoCliente novoCliente)
         {
-            var clienteInserido = await clienteManager.InsertClienteAsync(cliente);
-            return CreatedAtAction(nameof(Get), new { id = cliente.Id }, cliente);
+            var clienteInserido = await clienteManager.InsertClienteAsync(novoCliente);
+            return CreatedAtAction(nameof(Get), new { id = clienteInserido.Id }, novoCliente);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(Cliente cliente)
+        public async Task<IActionResult> Put(AlteraCliente alteraCliente)
         {
-            var clienteAtualizado = await clienteManager.UpdateClienteAsync(cliente);
+            var clienteAtualizado = await clienteManager.UpdateClienteAsync(alteraCliente);
             if (clienteAtualizado == null)
             {
                 return NotFound();

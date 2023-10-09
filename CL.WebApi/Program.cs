@@ -1,4 +1,6 @@
-using CL.Core.Domains;
+using AutoMapper;
+using CL.CoreShared.ModelViews;
+using CL.Manager.Mappings;
 using CL.Manager.Validator;
 using CL.WebApi.Extensions;
 using FluentValidation;
@@ -11,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureMySqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryWrapper();
 
+builder.Services.AddAutoMapper(typeof(NovoclienteMappingProfile), typeof(AlteraClienteMappingProfile));
+
 builder.Services.AddControllers().AddFluentValidation();
 
 
@@ -18,7 +22,8 @@ builder.Services.AddControllers().AddFluentValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<IValidator<Cliente>, ClienteValidator>();
+builder.Services.AddTransient<IValidator<NovoCliente>, NovoClienteValidator>();
+builder.Services.AddTransient<IValidator<AlteraCliente>, AlteraClienteValidator>();
 
 var app = builder.Build();
 
