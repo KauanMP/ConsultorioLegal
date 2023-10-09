@@ -1,6 +1,9 @@
+using AutoMapper;
 using CL.Core.Domains;
+using CL.CoreShared.ModelViews;
 using CL.Manager.Implementation;
 using CL.Manager.Interfaces;
+using CL.Manager.Mappings;
 using CL.Manager.Validator;
 using CL.WebApi.Context;
 using CL.WebApi.Repository;
@@ -24,6 +27,17 @@ namespace CL.WebApi.Extensions
         {
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteManager, ClienteManager>();
+        }
+
+        public static void UseAutoMapperConfiguration(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(NovoclienteMappingProfile), typeof(AlteraClienteMappingProfile));
+        }
+
+        public static void FluentValidationConfiguration(this IServiceCollection services)
+        {
+            services.AddTransient<IValidator<NovoCliente>, NovoClienteValidator>();
+            services.AddTransient<IValidator<AlteraCliente>, AlteraClienteValidator>();
         }
     }
 }

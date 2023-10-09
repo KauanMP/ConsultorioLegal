@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureMySqlContext(builder.Configuration);
 builder.Services.ConfigureRepositoryWrapper();
 
-builder.Services.AddAutoMapper(typeof(NovoclienteMappingProfile), typeof(AlteraClienteMappingProfile));
+builder.Services.UseAutoMapperConfiguration();
 
 builder.Services.AddControllers().AddFluentValidation();
 
@@ -22,8 +22,7 @@ builder.Services.AddControllers().AddFluentValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<IValidator<NovoCliente>, NovoClienteValidator>();
-builder.Services.AddTransient<IValidator<AlteraCliente>, AlteraClienteValidator>();
+builder.Services.FluentValidationConfiguration();
 
 var app = builder.Build();
 
