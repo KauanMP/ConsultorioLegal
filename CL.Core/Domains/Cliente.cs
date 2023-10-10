@@ -24,7 +24,7 @@ namespace CL.Core.Domains
         [DefaultValue("M")]
         [Required]
         public string Sexo { get; set; }
-        public string Telefone { get; set; }
+        public ICollection<Telefone> Telefones { get; set; }
 
         [Column("DocumentoIdentificador")]
         public string Documento { get; set; }

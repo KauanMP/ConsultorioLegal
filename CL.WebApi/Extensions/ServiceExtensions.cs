@@ -45,7 +45,9 @@ namespace CL.WebApi.Extensions
         public static void FluentValidationConfiguration(this IServiceCollection services)
         {
             services.AddTransient<IValidator<NovoCliente>, NovoClienteValidator>();
+            services.AddTransient<IValidator<NovoEndereco>, NovoEnderecoValidator>();
             services.AddTransient<IValidator<AlteraCliente>, AlteraClienteValidator>();
+            services.AddTransient<IValidator<NovoTelefone>, NovoTelefoneValidator>();
         }
     }
 }

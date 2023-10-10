@@ -2,6 +2,7 @@ using CL.Core.Domains;
 using CL.CoreShared.ModelViews;
 using CL.Manager.Interfaces;
 using CL.WebApi.Context;
+using CL.WebApi.Migrations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 
@@ -18,7 +19,7 @@ namespace CL.WebApi.Repository
         // GetAll
         public async Task<IEnumerable<Cliente>> GetClientesAsync()
         {
-            return await context.Clientes.Include(p => p.Endereco).AsNoTracking().ToListAsync();
+            return await context.Clientes.Include(p => p.Endereco).Include(p => p.Telefones).AsNoTracking().ToListAsync();
         }
 
         // GetById
@@ -28,7 +29,7 @@ namespace CL.WebApi.Repository
             // return await context.Clientes.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
             // return await context.Clientes.SingleOrDefaultAsync(c => c.Id == id);
 
-            return await context.Clientes.Include(p => p.Endereco).SingleOrDefaultAsync(p => p.Id == id);
+            return await context.Clientes.Include(p => p.Endereco).Include(p => p.Telefones).SingleOrDefaultAsync(p => p.Id == id);
         }
 
         // Insert
