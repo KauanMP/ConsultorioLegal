@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CL.WebApi.Migrations
 {
     [DbContext(typeof(CLContext))]
-    [Migration("20231010015216_Telefones")]
-    partial class Telefones
+    [Migration("20231011015036_MuitosPraMuitos")]
+    partial class MuitosPraMuitos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -82,6 +82,37 @@ namespace CL.WebApi.Migrations
                     b.ToTable("Enderecos");
                 });
 
+            modelBuilder.Entity("CL.Core.Domains.Especialidade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Especialidades");
+                });
+
+            modelBuilder.Entity("CL.Core.Domains.Medico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CRM")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Medicos");
+                });
+
             modelBuilder.Entity("CL.Core.Domains.Telefone", b =>
                 {
                     b.Property<int>("ClienteId")
@@ -93,6 +124,21 @@ namespace CL.WebApi.Migrations
                     b.HasKey("ClienteId", "Numero");
 
                     b.ToTable("Telefones");
+                });
+
+            modelBuilder.Entity("EspecialidadeMedico", b =>
+                {
+                    b.Property<int>("EspecialidadesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MedicosId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EspecialidadesId", "MedicosId");
+
+                    b.HasIndex("MedicosId");
+
+                    b.ToTable("EspecialidadeMedico");
                 });
 
             modelBuilder.Entity("CL.Core.Domains.Endereco", b =>
@@ -115,6 +161,21 @@ namespace CL.WebApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("EspecialidadeMedico", b =>
+                {
+                    b.HasOne("CL.Core.Domains.Especialidade", null)
+                        .WithMany()
+                        .HasForeignKey("EspecialidadesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CL.Core.Domains.Medico", null)
+                        .WithMany()
+                        .HasForeignKey("MedicosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CL.Core.Domains.Cliente", b =>

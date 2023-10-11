@@ -8,9 +8,9 @@ using CL.CoreShared.ModelViews;
 
 namespace CL.Manager.Mappings
 {
-    public class NovoclienteMappingProfile : Profile
+    public class NovoClienteMappingProfile : Profile
     {
-        public NovoclienteMappingProfile()
+        public NovoClienteMappingProfile()
         {
             CreateMap<NovoCliente, Cliente>()
             .ForMember(d => d.Criacao, o => o.MapFrom(x => DateTime.Now))

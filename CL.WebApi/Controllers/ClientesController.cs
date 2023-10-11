@@ -1,14 +1,5 @@
-using System.ComponentModel.DataAnnotations;
-using System.Net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CL.Core.Domains;
 using Microsoft.AspNetCore.Mvc;
 using CL.Manager.Interfaces;
-using CL.Manager.Implementation;
-using CL.Manager.Validator;
 using CL.CoreShared.ModelViews;
 
 namespace CL.WebApi.Controllers

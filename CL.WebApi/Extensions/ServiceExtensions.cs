@@ -35,11 +35,13 @@ namespace CL.WebApi.Extensions
         {
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteManager, ClienteManager>();
+            services.AddScoped<IMedicoRepository, MedicoRepository>();
+            services.AddScoped<IMedicoManager, MedicoManager>();
         }
 
         public static void UseAutoMapperConfiguration(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(NovoclienteMappingProfile), typeof(AlteraClienteMappingProfile));
+            services.AddAutoMapper(typeof(NovoClienteMappingProfile), typeof(AlteraClienteMappingProfile), typeof(NovoMedicoMappingProfile));
         }
 
         public static void FluentValidationConfiguration(this IServiceCollection services)

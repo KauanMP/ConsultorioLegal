@@ -2,7 +2,6 @@ using CL.Core.Domains;
 using CL.CoreShared.ModelViews;
 using CL.Manager.Interfaces;
 using CL.WebApi.Context;
-using CL.WebApi.Migrations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 
