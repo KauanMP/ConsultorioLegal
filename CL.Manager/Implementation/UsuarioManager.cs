@@ -2,37 +2,79 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using CL.Core.Domains;
 using CL.CoreShared.ModelViews.Usuario;
 using CL.Manager.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace CL.Manager.Implementation
 {
     public class UsuarioManager : IUsuarioManager
     {
-        public Task<IEnumerable<UsuarioView>> GetAllUsersAsync()
+        private readonly IUsuarioRepository repository;
+        private readonly IMapper mapper;
+
+        public UsuarioManager(IUsuarioRepository repository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            this.repository = repository;
+            this.mapper = mapper;
+        }
+        public async Task<IEnumerable<UsuarioView>> GetAllUsersAsync()
+        {
+            return mapper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioView>>(await repository.GetAllUsersAsync());
         }
 
-        public Task<UsuarioView> GetUserByIdAsync(string login)
+        public async Task<UsuarioView> GetUserByIdAsync(string login)
         {
-            throw new NotImplementedException();
+            return mapper.Map<UsuarioView>(await repository.GetUserByIdAsync(login));
         }
 
-        public Task<UsuarioView> InsertUserAsync(Usuario usuario)
+        public async Task<UsuarioView> InsertUserAsync(Usuario usuario)
         {
-            throw new NotImplementedException();
+            ConverteSenhaEmHash(usuario);
+            return mapper.Map<UsuarioView>(await repository.InsertUserAsync(usuario));
         }
 
-        public Task<UsuarioView> UpdateUserAsync(Usuario usuario)
+        private static void ConverteSenhaEmHash(Usuario usuario)
         {
-            throw new NotImplementedException();
+            var passwordHasher = new PasswordHasher<Usuario>();
+            usuario.Senha = passwordHasher.HashPassword(usuario, usuario.Senha);
         }
 
-        public Task<bool> ValidaSenhaAsync(Usuario usuario)
+        public async Task<UsuarioView> UpdateUserAsync(Usuario usuario)
         {
-            throw new NotImplementedException();
+            ConverteSenhaEmHash(usuario);
+            return mapper.Map<UsuarioView>(await repository.UpdateUserAsync(usuario));
+        }
+
+        public async Task<bool> ValidaSenhaAsync(Usuario usuario)
+        {
+            var findUser = await repository.GetUserByIdAsync(usuario.Login);
+            if (findUser == null)
+            {
+                return false;
+            }
+            return await ValidaEAtualizaHashAsync(usuario, findUser);
+        }
+
+        private async Task<bool> ValidaEAtualizaHashAsync(Usuario usuario, Usuario findUser)
+        {
+            var passwordHasher = new PasswordHasher<Usuario>();
+            var status = passwordHasher.VerifyHashedPassword(usuario, findUser.Senha, usuario.Senha);
+
+            switch (status)
+            {
+                case PasswordVerificationResult.Failed:
+                    return false;
+                case PasswordVerificationResult.Success:
+                    return true;
+                case PasswordVerificationResult.SuccessRehashNeeded:
+                    await UpdateUserAsync(usuario);
+                    return true;
+                default:
+                    throw new InvalidOperationException();
+            }
         }
     }
 }

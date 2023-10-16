@@ -12,18 +12,18 @@ namespace CL.WebApi.Controllers
     [Route("api/[controller]")]
     public class UsuarioController : ControllerBase
     {
-        private readonly IUsuarioRepository repository;
+        private readonly IUsuarioManager manager;
 
-        public UsuarioController(IUsuarioRepository repository)
+        public UsuarioController(IUsuarioManager manager)
         {
-            this.repository = repository;
+            this.manager = manager;
         }
 
         [HttpGet]
         [Route("ValidaUsuario")]
         public async Task<IActionResult> ValidaUsuario(Usuario usuario)
         {
-            var valido = await repository.ValidaSenhaAsync(usuario);
+            var valido = await manager.ValidaSenhaAsync(usuario);
 
             if(valido)
             {
@@ -36,7 +36,7 @@ namespace CL.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> InsertUsuario(Usuario usuario)
         {
-            var insertUsuario = await repository.InsertUserAsync(usuario);
+            var insertUsuario = await manager.InsertUserAsync(usuario);
             return CreatedAtAction(nameof(ValidaUsuario), new {login = usuario.Login}, insertUsuario);
         }
     }
