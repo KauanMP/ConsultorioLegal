@@ -1,9 +1,4 @@
-using AutoMapper;
-using CL.CoreShared.ModelViews;
-using CL.Manager.Mappings;
-using CL.Manager.Validator;
 using CL.WebApi.Extensions;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Newtonsoft.Json;
 

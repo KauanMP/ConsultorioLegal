@@ -49,7 +49,7 @@ namespace CL.WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clientes");
+                    b.ToTable("Clientes", (string)null);
                 });
 
             modelBuilder.Entity("CL.Core.Domains.Endereco", b =>
@@ -77,7 +77,7 @@ namespace CL.WebApi.Migrations
 
                     b.HasKey("ClienteId");
 
-                    b.ToTable("Enderecos");
+                    b.ToTable("Enderecos", (string)null);
                 });
 
             modelBuilder.Entity("CL.Core.Domains.Especialidade", b =>
@@ -91,7 +91,7 @@ namespace CL.WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Especialidades");
+                    b.ToTable("Especialidades", (string)null);
                 });
 
             modelBuilder.Entity("CL.Core.Domains.Medico", b =>
@@ -108,7 +108,7 @@ namespace CL.WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Medicos");
+                    b.ToTable("Medicos", (string)null);
                 });
 
             modelBuilder.Entity("CL.Core.Domains.Telefone", b =>
@@ -121,7 +121,7 @@ namespace CL.WebApi.Migrations
 
                     b.HasKey("ClienteId", "Numero");
 
-                    b.ToTable("Telefones");
+                    b.ToTable("Telefones", (string)null);
                 });
 
             modelBuilder.Entity("EspecialidadeMedico", b =>
@@ -136,7 +136,7 @@ namespace CL.WebApi.Migrations
 
                     b.HasIndex("MedicosId");
 
-                    b.ToTable("EspecialidadeMedico");
+                    b.ToTable("EspecialidadeMedico", (string)null);
                 });
 
             modelBuilder.Entity("CL.Core.Domains.Endereco", b =>

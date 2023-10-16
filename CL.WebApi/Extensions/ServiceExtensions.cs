@@ -20,7 +20,6 @@ namespace CL.WebApi.Extensions
             var serverVersion = ServerVersion.AutoDetect(connectionString);
             services.AddDbContext<CLContext>(o =>
              o.UseMySql(connectionString, serverVersion));
-
         }
 
         public static void UseDataBaseConfiguration(this IApplicationBuilder app)
@@ -37,11 +36,18 @@ namespace CL.WebApi.Extensions
             services.AddScoped<IClienteManager, ClienteManager>();
             services.AddScoped<IMedicoRepository, MedicoRepository>();
             services.AddScoped<IMedicoManager, MedicoManager>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IUsuarioManager, UsuarioManager>();
         }
 
         public static void UseAutoMapperConfiguration(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(NovoClienteMappingProfile), typeof(AlteraClienteMappingProfile), typeof(NovoMedicoMappingProfile));
+            services.AddAutoMapper(
+                typeof(NovoClienteMappingProfile), 
+                typeof(AlteraClienteMappingProfile), 
+                typeof(NovoMedicoMappingProfile),
+                typeof(UsuarioMappingProfile)
+                );
         }
 
         public static void FluentValidationConfiguration(this IServiceCollection services)
