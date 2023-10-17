@@ -18,6 +18,7 @@ namespace CL.WebApi.Context
         public DbSet<Medico> Medicos { get; set; }
         public DbSet<Especialidade> Especialidades { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Funcao> Funcoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

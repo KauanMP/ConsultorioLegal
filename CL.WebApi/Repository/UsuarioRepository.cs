@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CL.Core.Domains;
 using CL.Manager.Interfaces;
 using CL.WebApi.Context;
+using CL.WebApi.Migrations;
 using Microsoft.EntityFrameworkCore;
 
 namespace CL.WebApi.Repository
@@ -20,19 +21,31 @@ namespace CL.WebApi.Repository
 
         public async Task<IEnumerable<Usuario>> GetAllUsersAsync()
         {
-            return await clContext.Usuarios.AsNoTracking().ToListAsync();
+            return await clContext.Usuarios.Include(p => p.Funcoes).AsNoTracking().ToListAsync();
         }
 
         public async Task<Usuario> GetUserByIdAsync(string login)
         {
-            return await clContext.Usuarios.AsNoTracking().SingleOrDefaultAsync(p => p.Login == login);
+            return await clContext.Usuarios.Include(p => p.Funcoes).AsNoTracking().SingleOrDefaultAsync(p => p.Login == login);
         }
 
         public async Task<Usuario> InsertUserAsync(Usuario usuario)
         {
+            await InsertUsuarioFuncaoAsync(usuario);
             await clContext.Usuarios.AddAsync(usuario);
             await clContext.SaveChangesAsync();
             return usuario;
+        }
+
+        private async Task InsertUsuarioFuncaoAsync(Usuario usuario)
+        {
+            var findFuncoes = new List<Funcao>();
+            foreach (var Funcao in usuario.Funcoes)
+            {
+                var findFuncao = await clContext.Funcoes.FindAsync(Funcao.Id);
+                findFuncoes.Add(findFuncao);
+            }
+            usuario.Funcoes = findFuncoes;
         }
 
         public async Task<Usuario> UpdateUserAsync(Usuario usuario)
