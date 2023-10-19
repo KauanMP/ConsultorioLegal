@@ -47,3 +47,10 @@ C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Mic
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kauan\Área de Trabalho\ConsultorioLegal\CL.WebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
