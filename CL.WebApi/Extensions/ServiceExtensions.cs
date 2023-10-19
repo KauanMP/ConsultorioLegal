@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Text;
 using AutoMapper;
 using CL.Core.Domains;
@@ -19,6 +20,19 @@ namespace CL.WebApi.Extensions
 {
     public static class ServiceExtensions
     {
+        public static void ConfigureCors(this IServiceCollection services)
+        {
+            services.AddCors(o => {
+                o.AddPolicy("CorsPolicy",
+                builder => builder
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin()
+                
+                );
+            });
+        }
+
         public static void ConfigureMySqlContext(this IServiceCollection services, IConfiguration config)
         {
             var connectionString = config["mysqlconnection:connectionString"];
