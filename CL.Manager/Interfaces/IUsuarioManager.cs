@@ -11,8 +11,8 @@ namespace CL.Manager.Interfaces
     {
         Task<IEnumerable<UsuarioView>> GetAllUsersAsync();
         Task<UsuarioView> GetUserByIdAsync(string login);
-        Task<UsuarioView> InsertUserAsync(Usuario usuario);
+        Task<UsuarioView> InsertUserAsync(NewUsuario newUsuario);
         Task<UsuarioView> UpdateUserAsync(Usuario usuario);
-        Task<bool> ValidaSenhaAsync(Usuario usuario);
+        Task<UsuarioLogado> ValidaUsuarioEGeraTokenAsync(Usuario usuario);
     }
 }

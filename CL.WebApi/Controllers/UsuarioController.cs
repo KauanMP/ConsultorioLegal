@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CL.Core.Domains;
+using CL.CoreShared.ModelViews.Usuario;
 using CL.Manager.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CL.WebApi.Controllers
@@ -20,24 +22,33 @@ namespace CL.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("ValidaUsuario")]
-        public async Task<IActionResult> ValidaUsuario(Usuario usuario)
+        [Route("Login")]
+        public async Task<IActionResult> Login(Usuario usuario)
         {
-            var valido = await manager.ValidaSenhaAsync(usuario);
+            var usuarioLogado = await manager.ValidaUsuarioEGeraTokenAsync(usuario);
 
-            if(valido)
+            if(usuarioLogado != null)
             {
-                return Ok();
+                return Ok(usuarioLogado);
             }
 
             return Unauthorized();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> InsertUsuario(Usuario usuario)
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
-            var insertUsuario = await manager.InsertUserAsync(usuario);
-            return CreatedAtAction(nameof(ValidaUsuario), new {login = usuario.Login}, insertUsuario);
+            var login = User.Identity.Name;
+            var usuario = await manager.GetUserByIdAsync(login);
+            return Ok(usuario);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(NewUsuario newUsuario)
+        {
+            var insertUsuario = await manager.InsertUserAsync(newUsuario);
+            return CreatedAtAction(nameof(Login), new {login = newUsuario.Login}, insertUsuario);
         }
     }
 }

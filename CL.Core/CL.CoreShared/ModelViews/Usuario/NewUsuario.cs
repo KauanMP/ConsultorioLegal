@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CL.Core.Domains;
 
 namespace CL.CoreShared.ModelViews.Usuario
 {
-    public class UsuarioView
+    public class NewUsuario
     {
         public string Login { get; set; }
-        public ICollection<FuncaoView> Funcoes { get; set; }
+        public string Senha { get; set; }
+        public ICollection<ReferenciaFuncao> Funcoes { get; set; }
     }
 }

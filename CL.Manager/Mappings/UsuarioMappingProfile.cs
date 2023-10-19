@@ -13,10 +13,10 @@ namespace CL.Manager.Mappings
         public UsuarioMappingProfile()
         {
             CreateMap<Usuario, UsuarioView>().ReverseMap();
-            // CreateMap<Usuario, NovoUsuario>().ReverseMap();
-            // CreateMap<Usuario, UsuarioLogado>().ReverseMap();
-            // CreateMap<Funcao, FuncaoView>().ReverseMap();
-            // CreateMap<Funcao, ReferenciaFuncao>().ReverseMap();
+            CreateMap<Usuario, NewUsuario>().ReverseMap();
+            CreateMap<Usuario, UsuarioLogado>().ReverseMap();
+            CreateMap<Funcao, FuncaoView>().ReverseMap();
+            CreateMap<Funcao, ReferenciaFuncao>().ReverseMap();
         }
     }
 }

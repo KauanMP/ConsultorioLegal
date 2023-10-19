@@ -6,6 +6,7 @@ using AutoMapper;
 using CL.Core.Domains;
 using CL.CoreShared.ModelViews.Usuario;
 using CL.Manager.Interfaces;
+using CL.Manager.Interfaces.Services;
 using Microsoft.AspNetCore.Identity;
 
 namespace CL.Manager.Implementation
@@ -14,11 +15,13 @@ namespace CL.Manager.Implementation
     {
         private readonly IUsuarioRepository repository;
         private readonly IMapper mapper;
+        private readonly IJWTService jWTService;
 
-        public UsuarioManager(IUsuarioRepository repository, IMapper mapper)
+        public UsuarioManager(IUsuarioRepository repository, IMapper mapper, IJWTService jWTService)
         {
             this.repository = repository;
             this.mapper = mapper;
+            this.jWTService = jWTService;
         }
         public async Task<IEnumerable<UsuarioView>> GetAllUsersAsync()
         {
@@ -30,8 +33,9 @@ namespace CL.Manager.Implementation
             return mapper.Map<UsuarioView>(await repository.GetUserByIdAsync(login));
         }
 
-        public async Task<UsuarioView> InsertUserAsync(Usuario usuario)
+        public async Task<UsuarioView> InsertUserAsync(NewUsuario newUsuario)
         {
+            var usuario = mapper.Map<Usuario>(newUsuario);
             ConverteSenhaEmHash(usuario);
             return mapper.Map<UsuarioView>(await repository.InsertUserAsync(usuario));
         }
@@ -48,14 +52,22 @@ namespace CL.Manager.Implementation
             return mapper.Map<UsuarioView>(await repository.UpdateUserAsync(usuario));
         }
 
-        public async Task<bool> ValidaSenhaAsync(Usuario usuario)
+        public async Task<UsuarioLogado> ValidaUsuarioEGeraTokenAsync(Usuario usuario)
         {
             var findUser = await repository.GetUserByIdAsync(usuario.Login);
             if (findUser == null)
             {
-                return false;
+                return null;
             }
-            return await ValidaEAtualizaHashAsync(usuario, findUser);
+
+            if (await ValidaEAtualizaHashAsync(usuario, findUser))
+            {
+                var usuarioLogado = mapper.Map<UsuarioLogado>(findUser);
+                usuarioLogado.Token = jWTService.GerarToken(findUser);
+
+                return usuarioLogado;
+            };
+            return null;
         }
 
         private async Task<bool> ValidaEAtualizaHashAsync(Usuario usuario, Usuario findUser)
